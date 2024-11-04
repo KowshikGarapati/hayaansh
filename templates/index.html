@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Page Title</title>
+	</head>
+	<body>
+        <div>
+	    <button onclick="prev()"> Prev </button>
+	    <img id="myimg" src= "https://hayansh-blog--kowshikgarapati.repl.co/static/pic4.jpg" width="320px" height="425px" />
+            <button id='next' onclick="next()"> Next </button>
+          <button  onclick="slide()"> start slideshow </button>
+          <button  onclick="stop()"> stop slideshow </button>
+        </div>
+        <script>
+            var images = [
+              "https://hayansh-blog--kowshikgarapati.repl.co/static/pic1.jpg",
+              "https://hayansh-blog--kowshikgarapati.repl.co/static/pic2.jpg",
+              "https://hayansh-blog--kowshikgarapati.repl.co/static/pic3.jpg",
+              "https://hayansh-blog--kowshikgarapati.repl.co/static/pic4.jpg",
+              "https://hayansh-blog--kowshikgarapati.repl.co/static/pic5.jpg",
+              "https://hayansh-blog--kowshikgarapati.repl.co/static/pic6.jpg",
+              "https://hayansh-blog--kowshikgarapati.repl.co/static/pic7.jpg",
+              "https://hayansh-blog--kowshikgarapati.repl.co/static/pic8.jpg",
+              "https://hayansh-blog--kowshikgarapati.repl.co/static/pic9.jpg",
+              "https://hayansh-blog--kowshikgarapati.repl.co/static/pic10.jpg",
+              "https://hayansh-blog--kowshikgarapati.repl.co/static/pic11.jpg",
+              "https://hayansh-blog--kowshikgarapati.repl.co/static/pic12.jpg",
+              "https://hayansh-blog--kowshikgarapati.repl.co/static/pic13.jpg",
+              "https://hayansh-blog--kowshikgarapati.repl.co/static/pic14.jpg",
+              "https://hayansh-blog--kowshikgarapati.repl.co/static/pic15.jpg",
+              "https://hayansh-blog--kowshikgarapati.repl.co/static/pic16.jpg"
+              
+];
+
+let image = document.getElementById("myimg");
+let i =0;
+function next(){
+    if(i+1>images.length){
+        i = 0;
+    }
+    image.src = images[i];
+    i++;
+}
+
+function prev(){
+    if(i<images.length){
+        i = images.length+1;
+    }
+    image.src = images[i-1];
+    i--;
+}
+function slide(){
+  setInterval(next,2000);
+}
+function stop(){
+  clearInterval();
+}
+
+
+        </script>
+	</body>
+  <!--if(i<images.length){
+        i = images.length+1;
+    }
+    image.src = images[i-1];
+    i--;-->
+</html>
